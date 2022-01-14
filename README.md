@@ -6,16 +6,15 @@ This is the first project from Hacking With Swift [100 days of Swift](https://ww
 
 ## 💁🏽‍♂️ Overview
 
-This app shows a list of images that user can view and share
+This app shows a list of images that user can view
 
 ## ⚙️ How it works
 
-The navigate between a list of images to see them. Its also possible
-to share the image and save it in the device
+The user navigates between a list of images to see them, they're related to storms
 
 ## 📹 Video
 
-![](https://media.giphy.com/media/5qGEKzPQ9tubFRIT9I/giphy.gif)
+![](https://media.giphy.com/media/md05NeAYDLXCCBVfDw/giphy.gif)
 
 ## 🔨 Built with
 
