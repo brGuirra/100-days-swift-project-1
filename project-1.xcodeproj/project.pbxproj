@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3D6731A5277F773100083179 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6731A4277F773100083179 /* DetailViewController.swift */; };
+		3D99E57C27C45C64007CC79A /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D99E57B27C45C64007CC79A /* PictureCell.swift */; };
 		3DB737B9277E71450082AFB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB737B8277E71450082AFB7 /* AppDelegate.swift */; };
 		3DB737BB277E71450082AFB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB737BA277E71450082AFB7 /* SceneDelegate.swift */; };
-		3DB737BD277E71450082AFB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB737BC277E71450082AFB7 /* ViewController.swift */; };
+		3DB737BD277E71450082AFB7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB737BC277E71450082AFB7 /* CollectionViewController.swift */; };
 		3DB737C0277E71450082AFB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB737BE277E71450082AFB7 /* Main.storyboard */; };
 		3DB737C2277E71450082AFB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB737C1277E71450082AFB7 /* Assets.xcassets */; };
 		3DB737C5277E71450082AFB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DB737C3277E71450082AFB7 /* LaunchScreen.storyboard */; };
@@ -28,10 +29,11 @@
 
 /* Begin PBXFileReference section */
 		3D6731A4277F773100083179 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3D99E57B27C45C64007CC79A /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 		3DB737B5277E71450082AFB7 /* project-1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project-1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB737B8277E71450082AFB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DB737BA277E71450082AFB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3DB737BC277E71450082AFB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3DB737BC277E71450082AFB7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		3DB737BF277E71450082AFB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DB737C1277E71450082AFB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB737C4277E71450082AFB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,8 +82,9 @@
 			children = (
 				3DB737B8277E71450082AFB7 /* AppDelegate.swift */,
 				3DB737BA277E71450082AFB7 /* SceneDelegate.swift */,
-				3DB737BC277E71450082AFB7 /* ViewController.swift */,
+				3DB737BC277E71450082AFB7 /* CollectionViewController.swift */,
 				3D6731A4277F773100083179 /* DetailViewController.swift */,
+				3D99E57B27C45C64007CC79A /* PictureCell.swift */,
 				3DB737BE277E71450082AFB7 /* Main.storyboard */,
 				3DB737C1277E71450082AFB7 /* Assets.xcassets */,
 				3DB737C3277E71450082AFB7 /* LaunchScreen.storyboard */,
@@ -189,8 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DB737BD277E71450082AFB7 /* ViewController.swift in Sources */,
+				3DB737BD277E71450082AFB7 /* CollectionViewController.swift in Sources */,
 				3DB737B9277E71450082AFB7 /* AppDelegate.swift in Sources */,
+				3D99E57C27C45C64007CC79A /* PictureCell.swift in Sources */,
 				3DB737BB277E71450082AFB7 /* SceneDelegate.swift in Sources */,
 				3D6731A5277F773100083179 /* DetailViewController.swift in Sources */,
 			);

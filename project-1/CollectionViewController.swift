@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class CollectionViewController: UICollectionViewController {
     var pictures = [String]()
     
     override func viewDidLoad() {
@@ -41,22 +41,37 @@ class ViewController: UITableViewController {
         DispatchQueue.main.async {
             [weak self] in
             
-            self?.tableView.reloadData()
+            self?.collectionView.reloadData()
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictures.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Picture", for: indexPath) as? PictureCell else {
+            fatalError("Unable to dequeue PictureCell.")
+        }
         
-        cell.textLabel?.text = pictures[indexPath.row]
+        let pictureFileName = pictures[indexPath.item]
+        
+        cell.pictureLabel.text = pictureFileName
+        
+        let image = UIImage(named: pictureFileName)
+        print(image!)
+        
+        cell.imageView.image = image
+        cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
+        cell.imageView.layer.borderWidth = 2
+        cell.imageView.layer.cornerRadius = 3
+        
+        cell.layer.cornerRadius = 7
+        
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
             vc.selectedImage = pictures[indexPath.row]
             vc.pictureIndex = indexPath.row + 1
