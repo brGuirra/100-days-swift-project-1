@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var pictures = [String]()
+    var pictures = [Picture]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,21 @@ class ViewController: UITableViewController {
             
             self?.loadImagesFromBundle()
         }
+        
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "pictures") as? Data {
+            let decoder = JSONDecoder()
+            
+            do {
+                pictures = try decoder.decode([Picture].self, from: savedData)
+                print(pictures[0].views)
+            } catch {
+                print("Failed loading pictures info.")
+            }
+            
+            
+        }
     }
     
     func loadImagesFromBundle() {
@@ -32,7 +47,7 @@ class ViewController: UITableViewController {
         
         for item in items {
             if item.hasPrefix("nssl") {
-                pictures.append(item)
+                pictures.append(Picture(name: item))
             }
         }
         
@@ -52,17 +67,34 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
         
-        cell.textLabel?.text = pictures[indexPath.row]
+        cell.textLabel?.text = pictures[indexPath.row].name
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
-            vc.selectedImage = pictures[indexPath.row]
+            vc.selectedImage = pictures[indexPath.row].name
             vc.pictureIndex = indexPath.row + 1
             vc.amountOfPictures = pictures.count
             
+            pictures[indexPath.row].views += 1
+            
+            save()
+            
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func save() {
+        let enconder = JSONEncoder()
+        
+        if let savedData = try? enconder.encode(pictures) {
+            let defaults = UserDefaults.standard
+            
+            print(pictures[0].views)
+            defaults.set(savedData, forKey: "pictures")
+        } else {
+            print("Failed saving pictures info.")
         }
     }
 }
